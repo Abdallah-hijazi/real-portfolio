@@ -851,7 +851,7 @@ body.loaded {
 	left: 0;
 	padding: 20px 0 15px;
 	z-index: 98;
-	opacity: 0;
+	/* opacity: 0; */
 	-webkit-transition: 0.3s;
 	-o-transition: 0.3s;
 	transition: 0.3s;
@@ -872,10 +872,10 @@ body.loaded {
 .tj-header-area.header-2.sticky-out {
 	top: 0;
 	opacity: 1;
-	-webkit-animation: bounceInUp 1s;
-	animation: bounceInUp 1s;
-	-webkit-animation-duration: 1s;
-	animation-duration: 1s;
+	-webkit-animation: bounceInUp 0.1s;
+	animation: bounceInUp 0.1s;
+	-webkit-animation-duration: 0.1s;
+	animation-duration: 0.1s;
 	-webkit-animation-fill-mode: forwards;
 	animation-fill-mode: forwards;
 }
@@ -2897,59 +2897,6 @@ body.loaded {
 }
 .tj-post__thumb .tj-post__video .popup_video:hover::after {
 	opacity: 1;
-}
-.tj-post .tj-post__thumb .tj-post__gallery .tj-post-gallery__img img {
-	-webkit-transform: scale(1);
-	-ms-transform: scale(1);
-	transform: scale(1);
-}
-.tj-post__gallery.owl-carousel .owl-nav button {
-	width: 45px;
-	height: 45px;
-	font-size: 18px;
-	line-height: 1;
-	color: var(--tj-white);
-	padding: 0;
-	border-radius: 50%;
-	display: -webkit-inline-box;
-	display: -ms-inline-flexbox;
-	display: inline-flex;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	justify-content: center;
-	background-color: transparent;
-	position: absolute;
-	left: 15px;
-	top: 50%;
-	-webkit-transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	transform: translateY(-50%);
-	z-index: 2;
-}
-.tj-post__gallery.owl-carousel .owl-nav button::after {
-	content: "";
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	background-color: var(--tj-theme-primary);
-	opacity: 0.7;
-	-webkit-transition: all 0.4s ease-in-out 0s;
-	-o-transition: all 0.4s ease-in-out 0s;
-	transition: all 0.4s ease-in-out 0s;
-	z-index: -1;
-	border-radius: 50%;
-}
-.tj-post__gallery.owl-carousel .owl-nav button:hover::after {
-	opacity: 1;
-}
-.tj-post__gallery.owl-carousel .owl-nav button.owl-next {
-	left: auto;
-	right: 15px;
 }
 .tj-post .tj-post__content {
 	padding: 30px;

@@ -103,76 +103,26 @@
 	updateActiveSection();
 
 	$(document).ready(function ($) {
-		/*------------------------------------------------------
-  	/  Sticky Header
-  	/------------------------------------------------------*/
 		var lastScrollTop = 0;
-		$(window).scroll(function () {
-			var scroll = $(window).scrollTop();
+    	var headerHeight = $('.tj-header-area.header-absolute').outerHeight();
 
-			if (scroll > 300) {
-				$(".tj-header-area.header-sticky").addClass("sticky");
-				$(".tj-header-area.header-sticky").removeClass("sticky-out");
-			} else if (scroll < lastScrollTop) {
-				if (scroll < 500) {
-					$(".tj-header-area.header-sticky").addClass("sticky-out");
-					$(".tj-header-area.header-sticky").removeClass("sticky");
-				}
-			} else {
-				$(".tj-header-area.header-sticky").removeClass("sticky");
-			}
+    	$(window).scroll(function () {
+        	var scroll = $(window).scrollTop();
 
-			lastScrollTop = scroll;
-		});
+        	if (scroll > headerHeight) { 
+            	$(".tj-header-area.header-sticky").addClass("sticky");
+            	$(".tj-header-area.header-sticky").removeClass("sticky-out");
+        	} else if (scroll < lastScrollTop) {
+            	if (scroll < headerHeight + 200) { 
+               		$(".tj-header-area.header-sticky").addClass("sticky-out");
+                	$(".tj-header-area.header-sticky").removeClass("sticky");
+            	}
+        	} else {
+            	$(".tj-header-area.header-sticky").removeClass("sticky");
+        	}
 
-		/*------------------------------------------------------
-  	/ Post Gallery Carousel
-  	/------------------------------------------------------*/
-		$(".tj-post__gallery.owl-carousel").owlCarousel({
-			items: 1,
-			loop: true,
-			margin: 30,
-			dots: false,
-			nav: true,
-			navText: [
-				'<i class="fal fa-arrow-left"></i>',
-				'<i class="fal fa-arrow-right"></i>',
-			],
-			autoplay: false,
-			smartSpeed: 1000,
-			autoplayTimeout: 3000,
-		});
-
-		/*------------------------------------------------------
-  	/  Nice Select
-  	/------------------------------------------------------*/
-		$("select").niceSelect();
-
-		/*------------------------------------------------------
-  	/  ALL Popup
-  	/------------------------------------------------------*/
-		if ($(".popup_video").length > 0) {
-			$(`.popup_video`).magnificPopup({
-				disableOn: 10,
-				type: "iframe",
-				mainClass: "mfp-fade",
-				removalDelay: 160,
-				preloader: false,
-				fixedContentPos: false,
-			});
-		}
-
-		$(".modal-popup").magnificPopup({
-			type: "inline",
-			fixedContentPos: false,
-			fixedBgPos: true,
-			overflowY: "auto",
-			closeBtnInside: true,
-			preloader: false,
-			midClick: true,
-			removalDelay: 300,
-			mainClass: "popup-mfp",
-		});
+        	lastScrollTop = scroll;
+    	});
 	});
 
 	$(window).on("load", function () {
